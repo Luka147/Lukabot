@@ -46,6 +46,9 @@ async function messageProcess(message) {
           message.reply("command not found");
           break;
       }
+      
+      // delete the command so only the output is there
+      message.delete().catch(console.error);
     
     });
   } else {
