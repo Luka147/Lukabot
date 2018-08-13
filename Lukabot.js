@@ -51,6 +51,11 @@ async function messageProcess(message) {
         default:
           message.reply(`command \`${cmd}\` not found`);
           break;
+        case "listroles":
+          message.guild.roles.array().forEach(role => {
+            message.channel.send(role.name + " - " + role.id);
+          });
+          break;
       }
       
       // delete the command so only the output is there

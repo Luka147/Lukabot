@@ -1,13 +1,13 @@
 const Discord = require("discord.js");
 
 module.exports = {
-     title: "roles",
+     title: "Server info",
      cooldown: 20,
      details: [
         {
             perms      : "Everyone",
-            command    : "!roles",
-            description: "Lists all roles from a certain discord server"
+            command    : "!info",
+            description: "Prints out all server info"
         }
     ],
 	run: async (client, message) => {
