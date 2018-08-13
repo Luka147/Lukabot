@@ -49,7 +49,7 @@ async function messageProcess(message) {
           require("./cmds/mrwoo.js").run(client, message);
           break;
         default:
-          message.reply("command not found");
+          message.reply(`command \`${cmd}\` not found`);
           break;
       }
       
