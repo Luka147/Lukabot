@@ -39,6 +39,12 @@ async function messageProcess(message) {
         case "dog":
           require("./cmds/dog.js").run(client, message);
           break;
+        case "test":
+          require("./cmds/test.js").run(client, message, text);
+          break;
+        default:
+          message.reply("command not found");
+          break;
       }
     
     });
