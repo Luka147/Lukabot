@@ -31,11 +31,17 @@ async function messageProcess(message) {
           require("./cmds/ping.js").run(client, message);
           break;
         case "hello":
-          message.reply("hello there");
+          message.reply("Hello there! :wave:");
+          break;
+        case "help":
+          require("./cmds/help.js").run(client, message);
+          break;
+        case "dog":
+          require("./cmds/dog.js").run(client, message);
           break;
       }
     
-    }
+    });
   } else {
     //if someone dms your bot it will go in here
   }
