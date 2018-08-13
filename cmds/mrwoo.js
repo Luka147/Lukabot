@@ -1,23 +1,23 @@
 const Discord = require("discord.js");
 
 module.exports = {
-     title: "lettawi",
+     title: "mrwoo",
      cooldown: 20,
      details: [
         {
             perms      : "Everyone",
-            command    : "!lettawi",
-            description: "Picture of an idiot"
+            command    : "!mrwoo",
+            description: "Picture of an idiot v.2"
         }
     ],
 	run: async (client, message, text) => {
         
         const embed = new Discord.MessageEmbed()
         .setColor(0xFF69B4)
-        .setTitle("Lettawi")
+        .setTitle("Mrwoo")
         .setAuthor(message.author.username)
-        .setDescription('Gay')
-        .setImage('https://i.imgur.com/0gqGRE0.png')
+        .setDescription('Istuč čete')
+        .setImage('https://i.imgur.com/BiDwhlc.jpg')
         .setTimestamp();
         
         try {

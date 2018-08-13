@@ -45,6 +45,9 @@ async function messageProcess(message) {
         case "lettawi":
           require("./cmds/lettawi.js").run(client, message);
           break;
+        case "mrwoo":
+          require("./cmds/mrwoo.js").run(client, message);
+          break;
         default:
           message.reply("command not found");
           break;

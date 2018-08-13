@@ -11,6 +11,9 @@ module.exports = {
         }
     ],
 	run: async (client, message) => {
-    message.reply("Doggo is in the progress of making");
+    message.channel.send({ 
+        files: ['https://giphy.com/gifs/doggo-Z3aQVJ78mmLyo']
+    })
+    .catch(console.error);
   }
 };
