@@ -35,7 +35,7 @@ async function messageProcess(message) {
           break;
         case "help":
           require("./cmds/help.js").run(client, message);
-          break;          
+          break;
       }
     
     });
