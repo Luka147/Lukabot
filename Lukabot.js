@@ -36,6 +36,9 @@ async function messageProcess(message) {
         case "help":
           require("./cmds/help.js").run(client, message);
           break;
+        case "dog":
+          require("./cmds/dog.js").run(client, message);
+          break;
       }
     
     });
