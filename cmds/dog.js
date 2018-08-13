@@ -11,6 +11,6 @@ module.exports = {
         }
     ],
 	run: async (client, message) => {
-    message.reply("./Cool doggo/Doggo.txt");
+    message.reply("Doggo is in the progress of making");
   }
 };
