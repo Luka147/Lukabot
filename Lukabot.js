@@ -51,11 +51,6 @@ async function messageProcess(message) {
         case "mrwoo":
           require("./cmds/mrwoo.js").run(client, message);
           break;
-        case "listroles":
-          message.guild.roles.array().forEach(role => {
-            message.channel.send(role.name + " - " + role.id);
-          });
-          break;
         case "puppy":
           require("./cmds/puppy.js").run(client, message);
           break;

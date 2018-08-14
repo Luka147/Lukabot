@@ -14,7 +14,7 @@ module.exports = {
 	  const embed = new Discord.MessageEmbed() //start the embed message template
             .setTitle(":computer: "+ message.guild.name)
             .setAuthor(message.author.username)
-            .setColor(0x6441a5)
+            .setColor(0xff2424)
             .setDescription("Created at: "+ message.guild.createdAt)
             .setFooter("Lukabot", client.user.avatarURL({ format: "png" }))
 	        // picture as thumbnail
