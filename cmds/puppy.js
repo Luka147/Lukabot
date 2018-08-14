@@ -18,8 +18,9 @@ module.exports = {
           .setColor(0xFF69B4)
           .setTitle("Isn't it cute :heart_eyes:")
           .setAuthor(message.author.username)
+          .setImage(url)
           .setTimestamp();
-  
+
           try {
           message.channel.send(embed);
           }
@@ -27,8 +28,6 @@ module.exports = {
           message.reply(`Couldn't send message because of: ${e}`)
           }
 
-          files: [url]
         }).catch(console.error);
-      })
     }
 };
