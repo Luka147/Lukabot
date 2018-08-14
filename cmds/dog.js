@@ -11,9 +11,19 @@ module.exports = {
         }
     ],
 	run: async (client, message) => {
-    message.channel.send({ 
-        files: ['https://giphy.com/gifs/doggo-Z3aQVJ78mmLyo']
-    })
-    .catch(console.error);
-  }
+       
+        const embed = new Discord.MessageEmbed()
+        .setColor(0xe6e600)
+        .setTitle("Wowee")
+        .setAuthor(message.author.username)
+        .setImage('https://i.imgur.com/RWE7EFP.png')
+        .setTimestamp();
+        
+        try {
+        message.channel.send(embed);
+        }
+        catch (e) {
+        message.reply(`Couldn't send message because of: ${e}`)
+        }
+    }    
 };
