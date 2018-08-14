@@ -34,7 +34,7 @@ async function messageProcess(message) {
           message.reply("Hello there! :wave:");
           break;
         case "coins":
-          message.reply("*You successfully recieved 10 000 coins on gamdom.*");
+          message.reply("**You successfully recieved 10 000 coins on gamdom.**");
           break;
         case "help":
           require("./cmds/help.js").run(client, message);
