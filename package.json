@@ -4,7 +4,7 @@
   "description": "",
   "main": "Lukabot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node Lukabot.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/Luka147/Lukabot/issues"
   },
-  "homepage": "https://github.com/Luka147/Lukabot#readme",
-  "scripts": {
-    "start": "node Lukabot.js"
-}
+  "homepage": "https://github.com/Luka147/Lukabot#readme"
 }
