@@ -42,8 +42,19 @@ async function messageProcess(message) {
         case "test":
           require("./cmds/test.js").run(client, message, text);
           break;
+        case "lettawi":
+          require("./cmds/lettawi.js").run(client, message);
+          break;
+        case "mrwoo":
+          require("./cmds/mrwoo.js").run(client, message);
+          break;
+        case "listroles":
+          message.guild.roles.array().forEach(role => {
+            message.channel.send(role.name + " - " + role.id);
+          });
+          break;
         default:
-          message.reply("command not found");
+          message.reply(`command \`${cmd}\` not found`);
           break;
       }
       

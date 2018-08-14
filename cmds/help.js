@@ -11,7 +11,20 @@ module.exports = {
         }
     ],
 	run: async (client, message) => {
-    message.reply('!help and !ping');
+        
+        const embed = new Discord.MessageEmbed()
+        .setColor(0x3399ff)
+        .setTitle("Help")
+        .setAuthor(message.author.username)
+        .setDescription(`The cmds are !help, !ping, !mrwoo, !lettawi, !dog. `)
+        .setTimestamp();
+        
+        try {
+        message.channel.send(embed);
+        }
+        catch (e) {
+        message.reply(`Couldn't send message because of: ${e}`)
+        }
   }
 };
 
