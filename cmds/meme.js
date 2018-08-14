@@ -13,11 +13,15 @@ module.exports = {
     ],
 	run: async (client, message, memes) => {
         
-        console.log(memes.randomImages());
+        //console.log(memes.randomImages());
         console.log(memes.allImages);
 
-        console.log(memes.randomWords());
+        //console.log(memes.randomWords());
         console.log(memes.allWords);
+	let test = await memes.randomImages();
+	let test2 = await memes.randomWords();
+	console.log("test: " + test);
+        console.log("test2: " + test2);
         return;
 
         const embed = new Discord.MessageEmbed()
