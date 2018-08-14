@@ -11,7 +11,7 @@ module.exports = {
         }
     ],
 	run: async (client, message) => {
-    message.reply(guild.member.array().length);
+    message.guild(guild.members.array().length);
     
   }
 };
