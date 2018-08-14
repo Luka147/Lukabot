@@ -16,7 +16,7 @@ module.exports = {
         .setColor(0x3399ff)
         .setTitle("Help")
         .setAuthor(message.author.username)
-        .setDescription(`The cmds are !help, !ping, !mrwoo, !lettawi, !dog. `)
+        .setDescription(`The cmds are !help, !ping, !mrwoo, !lettawi, !dog, !puppy, !coins. `)
         .setTimestamp();
         
         try {

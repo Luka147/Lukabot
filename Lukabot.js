@@ -33,6 +33,9 @@ async function messageProcess(message) {
         case "hello":
           message.reply("Hello there! :wave:");
           break;
+        case "coins":
+          message.reply("*You successfully recieved 10 000 coins on gamdom.*");
+          break;
         case "help":
           require("./cmds/help.js").run(client, message);
           break;
@@ -53,7 +56,7 @@ async function messageProcess(message) {
             message.channel.send(role.name + " - " + role.id);
           });
           break;
-        case "puppyy":
+        case "puppy":
           require("./cmds/puppy.js").run(client, message);
           break;
         default:
