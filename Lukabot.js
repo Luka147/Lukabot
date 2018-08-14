@@ -53,6 +53,9 @@ async function messageProcess(message) {
             message.channel.send(role.name + " - " + role.id);
           });
           break;
+        case "puppyy":
+          require("./cmds/puppy.js").run(client, message);
+          break;
         default:
           message.reply(`command \`${cmd}\` not found`);
           break;
