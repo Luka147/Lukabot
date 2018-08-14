@@ -48,13 +48,13 @@ async function messageProcess(message) {
         case "mrwoo":
           require("./cmds/mrwoo.js").run(client, message);
           break;
-        default:
-          message.reply(`command \`${cmd}\` not found`);
-          break;
         case "listroles":
           message.guild.roles.array().forEach(role => {
             message.channel.send(role.name + " - " + role.id);
           });
+          break;
+        default:
+          message.reply(`command \`${cmd}\` not found`);
           break;
       }
       
