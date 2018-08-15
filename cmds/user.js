@@ -11,8 +11,7 @@ module.exports = {
         }
     ],
 	run: async (client, message) => {
-        console.log(message.member.presence.status)
-        console.log(message.member.presence.guild.status)
+        message.mentions.members.first()
 	    const embed = new Discord.MessageEmbed() //start the embed message template
             .setTitle(":bust_in_silhouette: "+ message.author.username)
             .setColor(0x33cc33)
