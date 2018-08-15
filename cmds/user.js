@@ -11,7 +11,9 @@ module.exports = {
         }
     ],
 	run: async (client, message) => {
-	  const embed = new Discord.MessageEmbed() //start the embed message template
+        console.log(message.member.presence.status)
+        console.log(message.member.presence.guild.status)
+	    const embed = new Discord.MessageEmbed() //start the embed message template
             .setTitle(":bust_in_silhouette: "+ message.author.username)
             .setColor(0x33cc33)
             .setFooter("Lukabot", client.user.avatarURL({ format: "png" }))
@@ -19,8 +21,8 @@ module.exports = {
             .setTimestamp()
             .addField(":baby: Created at: ", message.author.createdAt)
             .addField(":family: Member of: ", message.guild.name + " since: " + message.member.joinedAt)
-            .addField(":white_circle: Presence: ",+ message.author.presence)
-            .addField(":medal: Roles:", message.author.roles, true); //end the embed message template
+            .addField(":white_circle: Presence: ", message.member.presence.status)
+            .addField(":medal: Roles:", message.member.roles.array("\n"), true); //end the embed message template
 	  await message.channel.send(embed);
   }
 };  
