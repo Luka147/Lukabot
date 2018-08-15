@@ -18,9 +18,9 @@ module.exports = {
             .setThumbnail(message.author.avatarURL())
             .setTimestamp()
             .addField(":baby: Created at: ", message.author.createdAt)
-            .addField(":family: Member of: ", message.guild.name + " since: " + message.author.joinedAt)
+            .addField(":family: Member of: ", message.guild.name + " since: " + message.member.joinedAt)
             .addField(":white_circle: Presence: ",+ message.author.presence)
-            .addField(":medal: Roles:", message.author.roles.array(), true); //end the embed message template
+            .addField(":medal: Roles:", message.author.roles, true); //end the embed message template
 	  await message.channel.send(embed);
   }
 };  
