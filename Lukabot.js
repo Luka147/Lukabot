@@ -60,6 +60,9 @@ async function messageProcess(message) {
         case "info":
           require("./cmds/info.js").run(client, message);
           break;
+        case "user":
+          require("./cmds/user.js").run(client, message);
+          break;
         default:
           message.reply(`command \`${cmd}\` not found`);
           break;
