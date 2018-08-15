@@ -16,7 +16,7 @@ module.exports = {
         .setColor(0x3399ff)
         .setTitle("Help")
         .setAuthor(message.author.username)
-        .setDescription(`The cmds are \n **!help** - help menu \n **!ping** - plays ping pong with you \n **!mrwoo** - idiot v.2 \n **!lettawi** - idiot v.1 \n **!dog** - Wowee \n **!puppy** - displays a random dog pic \n **!coins** - gives coins `)
+        .setDescription(`The cmds are \n **!help** - help menu \n **!ping** - plays ping pong with you \n **!user or !user <tag>** - shows users info \n **!mrwoo** - idiot v.2 \n **!lettawi** - idiot v.1 \n **!dog** - Wowee \n **!puppy** - displays a random dog pic \n **!coins** - gives coins `)
         .setTimestamp();
         
         try {
