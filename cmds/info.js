@@ -22,7 +22,7 @@ module.exports = {
             .setTimestamp()
             .addField(":crown: Server owner: ", message.guild.owner, false)
             .addField(":family: Member count: ", message.guild.members.array().length, false)
-            .addField(":medal: Roles:", message.member.roles.array('\n'), true); //end the embed message template
+            .addField(":medal: Roles:", message.guild.roles.array('\n'), true); //end the embed message template
 	  await message.channel.send(embed);
   }
 };
