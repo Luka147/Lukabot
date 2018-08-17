@@ -70,6 +70,9 @@ async function messageProcess(message) {
         case "ban":
           require("./cmds/ban.js").run(client, message);
           break;
+        case "unban":
+          require("./cmds/unban.js").run(client, message);
+          break;
         case "listroles":
           message.guild.roles.array().forEach(role => {
             message.channel.send(role.name + " - " + role.id);
