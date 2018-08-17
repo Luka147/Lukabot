@@ -19,7 +19,7 @@ module.exports = {
         if (!discordMember) discordMember = message.member;   
         
         const embed = new Discord.MessageEmbed() //start the embed message template
-            .setTitle(":bust_in_silhouette: "+ discordMember.user.username)
+            .setTitle(discordMember.user.username)      
             .setColor(0x33cc33)
             .setFooter("Lukabot", client.user.avatarURL({ format: "png" }))
             .setThumbnail(discordMember.user.avatarURL())
