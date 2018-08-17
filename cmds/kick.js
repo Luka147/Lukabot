@@ -5,7 +5,7 @@ module.exports = {
      cooldown: 20,
      details: [
         {
-            perms      : "Everyone",
+            perms      : "everyone",
             command    : "!kick",
             description: "Kicks a user"
         }
@@ -20,10 +20,9 @@ module.exports = {
         if (discordMember) {discordMember.kick('Optional reason that will display in the audit logs').then(() => {
             message.reply(`Successfully kicked ${discordMember.user.tag}`);
           }).catch(err => {
+            message.reply("Couldn't kick the user, please check my permissions and try again")              
             console.error(err);
           });
-        } else {
-            message.reply('I was unable to kick the member');
-        }
+        } 
   }
 };
