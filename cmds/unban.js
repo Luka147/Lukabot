@@ -11,11 +11,17 @@ module.exports = {
         }
     ],
   run: async (client, message,args) => {
+
     let userID = args[1]
     if (isEmpty(userID))
       return message.reply("You gotta provide me the ID to use: \`!unban <ID>\`")
 
     // here you have the potential id in userID
+    message.guild.members.unban(`${args[1]}`).then(user => {
+     
+      return message.reply(`Successfully unbanned ${user.username} ${user.id}`)
+    })
+  
   }
 }
 
