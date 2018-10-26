@@ -33,7 +33,7 @@ module.exports = {
     })
 
     image.print(font, 350, 150, text);
-    image.writeAsync(IMAGE_PATH + NEW_FILE).catch(e => {
+    await image.writeAsync(IMAGE_PATH + NEW_FILE).catch(e => {
         return console.log("error while writing file: " + e)
     })
 
