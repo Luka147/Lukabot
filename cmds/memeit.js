@@ -5,11 +5,11 @@ const IMAGEG_PATH = 'D:/github/Lukabot/Generated/'
 const TEMPLATE_FILE = '-template.png'
 const NEW_FILE = '.png'
 const quality = 60
-let imageX  = 0
-let imageY = 0
-let textX = 0
-let textY = 0
-let maxWidth = 0
+let imageX
+let imageY
+let textX
+let textY
+let maxWidth
 
 module.exports = {
      title: "memeit",
@@ -35,6 +35,7 @@ module.exports = {
         return console.log("couldnt read image" + e)
     })
 
+    initDimensions();
     setDimensions(memeName);
     if (imageX == 0 || imageY == 0)
       return console.log("MemeIt: Seems like you forgot to set the variables in setDimensions()")
@@ -56,7 +57,7 @@ module.exports = {
         attachment: IMAGEG_PATH + memeName + NEW_FILE,
         name: memeName + NEW_FILE
        }]
-    }).catch(console.error);     
+    }).catch(console.error);
   }
 }
 
@@ -84,5 +85,13 @@ function setDimensions(memeName) {
         default:
           break;
       }
+}
+
+function initDimensions(){
+  imageX  = 0
+  imageY = 0
+  textX = 0
+  textY = 0
+  maxWidth = 0
 }
 
