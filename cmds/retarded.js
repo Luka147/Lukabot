@@ -3,6 +3,9 @@ var Jimp = require('jimp')
 const IMAGE_PATH = 'C:/Users/Luka/Desktop/'
 const TEMPLATE_FILE = '927.png'
 const NEW_FILE = 'retarded.png'
+const x  = 640
+const y = 640
+const maxWidth = x / 2 -24
 
 module.exports = {
      title: "retarded",
@@ -16,7 +19,7 @@ module.exports = {
     ],
   run: async (client, message) => {
     let text = message.content.split(/[ ](.+)/)[1];
-    if (isEmpty(text.trim()))
+    if (isEmpty(text))
       return message.reply("please provide a text - !retarded <text>")
 
     text = text.trim() // trim removes spaces on the beginning and the end
@@ -32,7 +35,7 @@ module.exports = {
         return console.log("couldnt get font" + e)
     })
 
-    image.print(font, 350, 150, text);
+    image.print(font, 350, 40, text, maxWidth);
     await image.writeAsync(IMAGE_PATH + NEW_FILE).catch(e => {
         return console.log("error while writing file: " + e)
     })
