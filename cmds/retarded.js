@@ -1,5 +1,8 @@
-const Discord = require("discord.js");
-var Jimp = require('jimp');
+const Discord = require("discord.js")
+var Jimp = require('jimp')
+const IMAGE_PATH = 'C:/Users/Luka/Desktop/'
+const TEMPLATE_FILE = '927.png'
+const NEW_FILE = 'retarded.png'
 
 module.exports = {
      title: "retarded",
@@ -11,26 +14,38 @@ module.exports = {
             description: "Oh no it's retarded"
         }
     ],
-	run: async (client, message) => {
-        Jimp.read('C:/Users/Luka/Desktop/927.png')
-        .then(image => {
-            image.resize(640, 640)
-            image.quality(60) // set JPEG quality
-            Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).then(font => {
-                image.print(font, 350, 150, 'Hello world!')
-            })
-            image.write('C:/Users/Luka/Desktop/retarded.png'); // save
-        })
-        .catch(err => {
-          console.error(err);
-        });
-        message.channel.send({
-            files: [{
-              attachment: 'C:/Users/Luka/Desktop/retarded.png',
-              name: 'retarded.png'
-            }]
-          })
-            .then(console.log)
-            .catch(console.error);     
+  run: async (client, message) => {
+    let text = message.content.split(/[ ](.+)/)[1];
+    if (isEmpty(text.trim()))
+      return message.reply("please provide a text - !retarded <text>")
+
+    text = text.trim() // trim removes spaces on the beginning and the end
+
+    let image = await Jimp.read(IMAGE_PATH + TEMPLATE_FILE).catch(e => {
+        return console.log("couldnt read image" + e)
+    })
+
+    image.resize(640, 640)
+         .quality(60);
+
+    let font = await Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).catch(e => {
+        return console.log("couldnt get font" + e)
+    })
+
+    image.print(font, 350, 150, text);
+    image.writeAsync(IMAGE_PATH + NEW_FILE).catch(e => {
+        return console.log("error while writing file: " + e)
+    })
+
+    message.channel.send({
+      files: [{
+        attachment: IMAGE_PATH + NEW_FILE,
+        name: NEW_FILE
+       }]
+    }).catch(console.error);     
   }
-};
+}
+
+function isEmpty(str) {
+    return (!str || 0 === str.length);
+  }
