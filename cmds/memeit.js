@@ -4,11 +4,11 @@ const IMAGET_PATH = 'D:/github/Lukabot/Templates/'
 const IMAGEG_PATH = 'D:/github/Lukabot/Generated/'
 const TEMPLATE_FILE = '-template.png'
 const NEW_FILE = '.png'
+const quality = 60
 let imageX  = 0
 let imageY = 0
 let textX = 0
 let textY = 0
-let quality = 0
 let maxWidth = 0
 
 module.exports = {
@@ -68,7 +68,6 @@ function setDimensions(memeName) {
           imageY = 640
           textX = 350
           textY = 40
-          quality = 60
           maxWidth = imageX / 2 -24
           break;
 
