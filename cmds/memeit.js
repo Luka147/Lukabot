@@ -48,7 +48,7 @@ module.exports = {
     })
 
     image.print(font, textX, textY, text, maxWidth);
-    await image.writeAsync(IMAGEG_PATH + NEW_FILE).catch(e => {
+    await image.writeAsync(IMAGEG_PATH + memeName + NEW_FILE).catch(e => {
         return console.log("error while writing file: " + e)
     })
 
@@ -62,7 +62,7 @@ module.exports = {
 }
 
 function setDimensions(memeName) {
-    switch (cmd) {
+    switch (memeName.trim()) {
 
         case "retarded":
           imageX  = 640
