@@ -78,7 +78,6 @@ function setDimensions(memeName) {
         //  imageY = 
         //  textX = 
         //  textY = 
-        //  quality = 
         //  maxWidth =
         // break;
 
