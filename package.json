@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "github:hydrabolt/discord.js",
+    "jimp": "^0.5.6",
     "random-puppy": "^1.1.0"
   },
   "bugs": {
