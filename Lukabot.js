@@ -76,8 +76,8 @@ async function messageProcess(message) {
         case "unban":
           require("./cmds/unban.js").run(client, message, args);
           break;
-        case "retarded":
-          require("./cmds/retarded.js").run(client, message, args);
+        case "memeit":
+          require("./cmds/memeit.js").run(client, message, args);
           break;
         case "listroles":
           message.guild.roles.array().forEach(role => {
