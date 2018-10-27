@@ -27,7 +27,7 @@ module.exports = {
     ],
   run: async (client, message, args) => {
     if (args.length < 3)
-      return message.reply("You did not include the memeName & the text. - !memeit <memeName> <text here>")
+      return message.reply("You did not include the memeName & the text. - !memeit <memeName> / <text1 here> / <text2 here> and so on.")
     let memeName = args[1];
     
     let text = message.content.split(/[/]+/);
