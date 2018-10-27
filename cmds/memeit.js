@@ -44,7 +44,7 @@ module.exports = {
     image.resize(imageX, imageY)
          .quality(quality);
 
-    let font = await Jimp.loadFont(Jimp.FONT_SANS_32_BLACK).catch(e => {
+    let font = await Jimp.loadFont(`D:/github/Lukabot/Font/memeit.fnt`).catch(e => {
         return console.log("couldnt get font" + e)
     })
 
@@ -83,67 +83,67 @@ function setDimensions(memeName) {
           textB = 0
           textC = 0
           textD = 0
-          maxWidth = imageX / 2 -24
+          maxWidth = 260
           break;
         
         case "drake":
           imageX  = 717
           imageY = 717
           textX = 370
-          textY = 40
+          textY = 80
           textA = 370
-          textB = 400
+          textB = 440
           textC = 0
           textD = 0
-          maxWidth = imageX / 2 -24
+          maxWidth = 300
           break;
           
         case "wesmart":
           imageX  = 640 
           imageY = 360
-          textX = 150
+          textX = 200
           textY = 20
-          textA = 150
+          textA = 200
           textB = 300
           textC = 0
           textD = 0
-          maxWidth = imageX / 2 -24
+          maxWidth = 225
           break;
         
         case "fry":
           imageX  = 552
           imageY = 414
-          textX = 15
+          textX = 100
           textY = 15
-          textA = 0
-          textB = 0
+          textA = 100
+          textB = 375
           textC = 0
           textD = 0
-          maxWidth = imageX / 2 -24
+          maxWidth = 350
           break;
         
         case "distracted":
           imageX  = 1125
           imageY = 750
           textX = 630
-          textY = 330
+          textY = 400
           textA = 870
-          textB = 440
-          textC = 200
-          textD = 500
-          maxWidth = imageX / 2 -24
+          textB = 475
+          textC = 220
+          textD = 580
+          maxWidth = 200
           break;
         
         case "buttons":
           imageX  = 600
           imageY = 908
-          textX = 60
-          textY = 120
-          textA = 275
-          textB = 80
+          textX = 85
+          textY = 135
+          textA = 290
+          textB = 90
           textC = 0
           textD = 0
-          maxWidth = imageX / 2 -24
+          maxWidth = 180
           break;
         
         
