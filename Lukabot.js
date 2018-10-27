@@ -79,6 +79,9 @@ async function messageProcess(message) {
         case "memeit":
           require("./cmds/memeit.js").run(client, message, args);
           break;
+        case "testsplit":
+          require("./cmds/testsplit.js").run(client, message);
+          break;
         case "listroles":
           message.guild.roles.array().forEach(role => {
             message.channel.send(role.name + " - " + role.id);

@@ -9,6 +9,10 @@ let imageX
 let imageY
 let textX
 let textY
+let textA
+let textB 
+let textC
+let textD 
 let maxWidth
 
 module.exports = {
@@ -25,11 +29,8 @@ module.exports = {
     if (args.length < 3)
       return message.reply("You did not include the memeName & the text. - !memeit <memeName> <text here>")
     let memeName = args[1];
-    let text = "";
     
-    for (i = 2; i < args.length; i++) {
-        text += args[i] + " ";
-    }
+    let text = message.content.split(/[/]+/);
 
     let image = await Jimp.read(IMAGET_PATH + memeName + TEMPLATE_FILE).catch(e => {
         return console.log("couldnt read image" + e)
@@ -47,7 +48,16 @@ module.exports = {
         return console.log("couldnt get font" + e)
     })
 
-    image.print(font, textX, textY, text, maxWidth);
+    image.print(font, textX, textY, text[1], maxWidth);
+    
+    if (textA != 0 || textB != 0) {
+      image.print(font, textA, textB, text[2], maxWidth);
+    }
+
+    if (textC != 0 || textD != 0) {
+      image.print(font, textC, textD, text[3], maxWidth);
+    }
+
     await image.writeAsync(IMAGEG_PATH + memeName + NEW_FILE).catch(e => {
         return console.log("error while writing file: " + e)
     })
@@ -69,8 +79,74 @@ function setDimensions(memeName) {
           imageY = 640
           textX = 350
           textY = 40
+          textA = 0 
+          textB = 0
+          textC = 0
+          textD = 0
           maxWidth = imageX / 2 -24
           break;
+        
+        case "drake":
+          imageX  = 717
+          imageY = 717
+          textX = 370
+          textY = 40
+          textA = 370
+          textB = 400
+          textC = 0
+          textD = 0
+          maxWidth = imageX / 2 -24
+          break;
+          
+        case "wesmart":
+          imageX  = 640 
+          imageY = 360
+          textX = 150
+          textY = 20
+          textA = 150
+          textB = 300
+          textC = 0
+          textD = 0
+          maxWidth = imageX / 2 -24
+          break;
+        
+        case "fry":
+          imageX  = 552
+          imageY = 414
+          textX = 15
+          textY = 15
+          textA = 0
+          textB = 0
+          textC = 0
+          textD = 0
+          maxWidth = imageX / 2 -24
+          break;
+        
+        case "distracted":
+          imageX  = 1125
+          imageY = 750
+          textX = 630
+          textY = 330
+          textA = 870
+          textB = 440
+          textC = 200
+          textD = 500
+          maxWidth = imageX / 2 -24
+          break;
+        
+        case "buttons":
+          imageX  = 600
+          imageY = 908
+          textX = 60
+          textY = 120
+          textA = 275
+          textB = 80
+          textC = 0
+          textD = 0
+          maxWidth = imageX / 2 -24
+          break;
+        
+        
 
         // this block for every new meme (gotta figure out the numbers with trying)
         
