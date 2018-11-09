@@ -38,9 +38,12 @@ module.exports = {
     let image = await Jimp.read(IMAGET_PATH + memeName + TEMPLATE_FILE).catch(e => {
         return console.log("couldnt read image" + e)
     })
+    if (!image)
+      return message.reply(`meme \`${memeName}\` not found`)
 
     initDimensions();
     setDimensions(memeName);
+
     if (text.length != textCount)
       return message.reply(`This meme needs ${textCount} words/sentences - !memeit <memeName> <text1 here> / <text2 here> / and so on.`)
     if (imageX == 0 || imageY == 0)
