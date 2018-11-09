@@ -55,6 +55,9 @@ async function messageProcess(message) {
         case "puppy":
           require("./cmds/puppy.js").run(client, message);
           break;
+        case "poll":
+          require("./cmds/poll.js").run(client, message, text);
+          break;
         case "meme":
           require("./cmds/meme.js").run(client, message);
           break;

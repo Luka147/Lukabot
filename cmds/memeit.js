@@ -33,7 +33,7 @@ module.exports = {
     let memeText = "";
     for (i = 2; i < args.length; i++) memeText += args[i] + " ";
     
-    let text = memeText.content.split(/[/]+/);
+    let text = memeText.split(/[/]+/);
 
     let image = await Jimp.read(IMAGET_PATH + memeName + TEMPLATE_FILE).catch(e => {
         return console.log("couldnt read image" + e)
