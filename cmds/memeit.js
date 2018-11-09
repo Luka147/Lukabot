@@ -14,6 +14,7 @@ let textB
 let textC
 let textD 
 let maxWidth
+let textCount
 
 module.exports = {
      title: "memeit",
@@ -27,7 +28,7 @@ module.exports = {
     ],
   run: async (client, message, args) => {
     if (args.length < 3)
-      return message.reply("You did not include the memeName & the text. - !memeit <memeName> / <text1 here> / <text2 here> and so on.")
+      return message.reply("You did not include the memeName & the text. - !memeit <memeName> / <text1 here> / <text2 here> / and so on.")
     let memeName = args[1];
     
     let text = message.content.split(/[/]+/);
@@ -37,6 +38,8 @@ module.exports = {
     })
 
     initDimensions();
+    if (text.length != textCount)
+      return message.reply(`This meme needs ${textCount} words/sentences - !memeit <memeName> / <text1 here> / <text2 here> / and so on.`)
     setDimensions(memeName);
     if (imageX == 0 || imageY == 0)
       return console.log("MemeIt: Seems like you forgot to set the variables in setDimensions()")
@@ -48,14 +51,14 @@ module.exports = {
         return console.log("couldnt get font" + e)
     })
 
-    image.print(font, textX, textY, text[1], maxWidth);
+    image.print(font, textX, textY, text[0], maxWidth);
     
     if (textA != 0 || textB != 0) {
-      image.print(font, textA, textB, text[2], maxWidth);
+      image.print(font, textA, textB, text[1], maxWidth);
     }
 
     if (textC != 0 || textD != 0) {
-      image.print(font, textC, textD, text[3], maxWidth);
+      image.print(font, textC, textD, text[2], maxWidth);
     }
 
     await image.writeAsync(IMAGEG_PATH + memeName + NEW_FILE).catch(e => {
@@ -84,6 +87,7 @@ function setDimensions(memeName) {
           textC = 0
           textD = 0
           maxWidth = 260
+          textCount = 1
           break;
         
         case "drake":
@@ -96,6 +100,7 @@ function setDimensions(memeName) {
           textC = 0
           textD = 0
           maxWidth = 300
+          textCount = 1
           break;
           
         case "wesmart":
@@ -108,6 +113,7 @@ function setDimensions(memeName) {
           textC = 0
           textD = 0
           maxWidth = 225
+          textCount = 1
           break;
         
         case "fry":
@@ -120,6 +126,7 @@ function setDimensions(memeName) {
           textC = 0
           textD = 0
           maxWidth = 350
+          textCount = 1
           break;
         
         case "distracted":
@@ -132,6 +139,7 @@ function setDimensions(memeName) {
           textC = 220
           textD = 580
           maxWidth = 200
+          textCount = 1
           break;
         
         case "buttons":
@@ -144,6 +152,7 @@ function setDimensions(memeName) {
           textC = 0
           textD = 0
           maxWidth = 180
+          textCount = 1
           break;
         
         
@@ -156,6 +165,7 @@ function setDimensions(memeName) {
         //  textX = 
         //  textY = 
         //  maxWidth =
+        //textCount = 1
         // break;
 
         default:
