@@ -30,8 +30,10 @@ module.exports = {
     if (args.length < 3)
       return message.reply("You did not include the memeName & the text. - !memeit <memeName> <text1 here> / <text2 here> / and so on.")
     let memeName = args[1];
+    let memeText = "";
+    for (i = 2; i < args.length; i++) memeText += args[i] + " ";
     
-    let text = message.content.split(/[/]+/);
+    let text = memeText.content.split(/[/]+/);
 
     let image = await Jimp.read(IMAGET_PATH + memeName + TEMPLATE_FILE).catch(e => {
         return console.log("couldnt read image" + e)
