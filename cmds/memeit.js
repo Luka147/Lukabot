@@ -38,9 +38,9 @@ module.exports = {
     })
 
     initDimensions();
+    setDimensions(memeName);
     if (text.length != textCount)
       return message.reply(`This meme needs ${textCount} words/sentences - !memeit <memeName> <text1 here> / <text2 here> / and so on.`)
-    setDimensions(memeName);
     if (imageX == 0 || imageY == 0)
       return console.log("MemeIt: Seems like you forgot to set the variables in setDimensions()")
 
@@ -179,5 +179,6 @@ function initDimensions(){
   textX = 0
   textY = 0
   maxWidth = 0
+  textCount = 0
 }
 
