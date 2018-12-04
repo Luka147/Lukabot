@@ -7,7 +7,7 @@ let configuration = {
 }
 
 client.on('ready', () => {
-  require('./events/ready').run(client, guildInfo, configuration, config, db);
+  require('./events/ready').run(client, configuration);
   client.user.setActivity("!help for more info")
   console.log(`Logged in as ${client.user.tag}!`);
 });
