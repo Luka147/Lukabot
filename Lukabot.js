@@ -2,7 +2,12 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./Config.json');
 
+let configuration = {
+  commands               : []
+}
+
 client.on('ready', () => {
+  require('./events/ready').run(client, guildInfo, configuration, config, db);
   client.user.setActivity("!help for more info")
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -37,6 +42,11 @@ async function messageProcess(message) {
         case "coins":
           message.reply("**You successfully recieved 10 000 coins on gamdom.**");
           break;
+
+        case "h":
+          require("./cmds/h").run(client, message, args, configuration);
+          break;
+        
         case "help":
           require("./cmds/help.js").run(client, message);
           break;
