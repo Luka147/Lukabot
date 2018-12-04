@@ -1,12 +1,17 @@
 
 const Discord = require("discord.js");
 
+
 module.exports = {
 	title: "poll",
- 	perms: "Everyone",
- 	commands: ["!poll"],
- 	description: ["Poll"],
-
+	cooldown: 20,
+	details: [
+		 {
+				 perms      : "Everyone",
+				 command    : "!poll <text>",
+				 description: "start a poll"
+		 }
+ ],
  	run: async (client, message, text) => {
 		if(text == undefined) {
 			text = " ";

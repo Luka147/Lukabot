@@ -5,7 +5,7 @@ module.exports = {
      cooldown: 20,
      details: [
         {
-            perms      : "everyone",
+            perms      : "Admin",
             command    : "!ban",
             description: "Bans a user"
         }

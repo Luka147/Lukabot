@@ -5,7 +5,7 @@ module.exports = {
      cooldown: 20,
      details: [
         {
-            perms      : "Mods",
+            perms      : "Admin",
             command    : "!admin",
             description: "Shows admin commands"
         }

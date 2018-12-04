@@ -21,7 +21,7 @@ module.exports = {
      cooldown: 20,
      details: [
         {
-            perms      : "everyone",
+            perms      : "Everyone",
             command    : "!memeit <memeName> <text here>",
             description: "Meme it !"
         }

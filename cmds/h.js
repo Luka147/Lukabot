@@ -27,11 +27,7 @@ module.exports = {
             let a = configuration.commands;
             let help = {
                 everyone : [],
-                staff    : [],
-                support  : [],
-                moderator: [],
-                admin    : [],
-                developer: []
+                admin    : []
             }
 
             for (let i = 0; i < a.length; i++) {
@@ -46,11 +42,7 @@ module.exports = {
               //.setFooter('Private message ".help <Command>" for details')
               .setFooter(`Execute "!help <Command>" for details`)
               if (help.everyone.length  !== 0) emb.addField("Everyone commands", help.everyone.join("\n"))
-              if (help.staff.length     !== 0) emb.addField("Staff commands", help.staff.join("\n"))
-              if (help.support.length   !== 0) emb.addField("Support commands", help.support.join("\n"))
-              if (help.moderator.length !== 0) emb.addField("Moderator commands", help.moderator.join("\n"))
               if (help.admin.length     !== 0) emb.addField("Admin commands", help.admin.join("\n"))
-              if (help.developer.length !== 0) emb.addField("Developer commands", help.developer.join("\n"))
               message.channel.send(emb).catch(e => { console.log(e) });
 
         } else if (args.length === 2) {
