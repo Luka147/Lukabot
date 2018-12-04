@@ -105,7 +105,7 @@ function setDimensions(memeName) {
           textC = 0
           textD = 0
           maxWidth = 300
-          textCount = 1
+          textCount = 2
           break;
           
         case "wesmart":
@@ -118,7 +118,7 @@ function setDimensions(memeName) {
           textC = 0
           textD = 0
           maxWidth = 225
-          textCount = 1
+          textCount = 2
           break;
         
         case "fry":
@@ -131,7 +131,7 @@ function setDimensions(memeName) {
           textC = 0
           textD = 0
           maxWidth = 350
-          textCount = 1
+          textCount = 2
           break;
         
         case "distracted":
@@ -144,7 +144,7 @@ function setDimensions(memeName) {
           textC = 220
           textD = 580
           maxWidth = 200
-          textCount = 1
+          textCount = 3
           break;
         
         case "buttons":
@@ -157,7 +157,7 @@ function setDimensions(memeName) {
           textC = 0
           textD = 0
           maxWidth = 180
-          textCount = 1
+          textCount = 2
           break;
         
         
