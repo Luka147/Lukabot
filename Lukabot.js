@@ -83,6 +83,9 @@ async function messageProcess(message) {
         case "ban":
           require("./cmds/ban.js").run(client, message);
           break;
+        case "eval":
+          require("./cmds/eval.js").run(client, message, args);
+          break;
         case "admin":
           require("./cmds/help-admin.js").run(client, message);
           break;
@@ -91,9 +94,6 @@ async function messageProcess(message) {
           break;
         case "memeit":
           require("./cmds/memeit.js").run(client, message, args);
-          break;
-        case "testsplit":
-          require("./cmds/testsplit.js").run(client, message);
           break;
         case "listroles":
           message.guild.roles.array().forEach(role => {
@@ -113,5 +113,4 @@ async function messageProcess(message) {
     //if someone dms your bot it will go in here
   }
 }
-
-client.login(config.token);
+client.login(config.token)
