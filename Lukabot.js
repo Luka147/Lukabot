@@ -84,7 +84,7 @@ async function messageProcess(message) {
           require("./cmds/ban.js").run(client, message);
           break;
         case "eval":
-          require("./cmds/eval.js").run(client, message, args);
+          require("./cmds/eval.js").run(client, message, config);
           break;
         case "admin":
           require("./cmds/help-admin.js").run(client, message);
